@@ -8,7 +8,7 @@ from listComp import ListComp
 #Config
 conn = DBConnect()
 root = Tk()
-root.geometry('1800x1000')
+root.geometry('800x800')
 root.title('FIR Complaint System')
 root.configure(background='#AEB6BF')
 
@@ -67,17 +67,9 @@ BuList.grid(row=9, column=1)
 BuSubmit = Button(root, text='Submit Now')
 BuSubmit.grid(row=9, column=2)
 
-invest=False;
-
-if invest==False:
-	btn1=Button(root, text="Investigation Complete",state=ACTIVE).grid(row=10,column=3)
-	btn.lower()
-	
-if invest==True: 	
-	btn1=Button(root, text="Investigation Complete",state=DISABLED).grid(row=10,column=3)
 
 def SaveData():
-	msg = conn.Add(ps.get(), subject.get(), com.get(), fullname.get(), SpanGender.get(), ad.get(1.0, 'end'), ph.get(), comment.get(1.0, 'end'))
+	msg = conn.Add(ps.get(), subject.get(), com.get(), fullname.get(), SpanGender.get(), ad.get(1.0, 'end'), ph.get(), comment.get(1.0, 'end'), 0)
 	ps.set("-Select Type-")
 	subject.delete(0, 'end')
 	com.set("-Select Type-")
